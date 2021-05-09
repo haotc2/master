@@ -1,0 +1,20 @@
+<mvc:View controllerName="sap.cp.webapp.controller.MasterView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	 height="100%">
+	<VBox fitContainer="true">
+		<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
+			considerSelectionVariants="true" entitySet="LineItemsSet" enableBasicSearch="true" basicSearchFieldName="Bukrs" showClearButton="true">
+			<smartFilterBar:layoutData>
+				<FlexItemData shrinkFactor="0"/>
+			</smartFilterBar:layoutData>
+		</smartFilterBar:SmartFilterBar>
+
+		<smartTable:SmartTable id="smartTable" entitySet="LineItemsSet" smartFilterId="smartFilterBar" tableType="Table"
+			useExportToExcel="true" useVariantManagement="false" useTablePersonalisation="true" header="Line Items" showRowCount="true">
+			<smartTable:layoutData>
+				<FlexItemData growFactor="1" baseSize="0%"/>
+			</smartTable:layoutData>
+		</smartTable:SmartTable>
+	</VBox>
+</mvc:View>
